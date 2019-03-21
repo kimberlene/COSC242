@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <getopt.h>
+#include "htable.h"
+#include "tree.h"
+
+
+int main(int argc, char **argv){
+
+    if(argv>1) {
+        while(option = getopt(argc, argv, optstring)!= EOF) {
+            swirtch(option) {
+                case 'T':
+                    data_structure = 1;
+                    break;
+                case 'c':
+                     doc_name = optarg;
+                     spell_check =1;
+                     break;
+                case 'd':
+                     collision_strat = 1;
+                     break;
+                case 'e':
+                    display
+                     
+            }
