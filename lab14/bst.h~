@@ -1,0 +1,11 @@
+#indef BST_H_
+#define BST_H_
+
+#include <stdio.h>
+
+typedef struct bst_node *bst; /* should live in bst.h */
+struct bst_node { /* should live in bst.c */
+    char *key;
+    bst left;
+    bst right;
+};

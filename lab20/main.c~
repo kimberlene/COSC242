@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "mylib.h"
+#include "graph.h"
+
+int main(void){
+    graph my_graph=NULL;
+    int v1,v2;
+    int size=0;
+    graph_t type = UNDIRECTED;
+    if(1==scanf("%d", &size)){
+        my_graph = graph_new(size);
+    }
+    while(2==scanf("%d%d", &v1, &v2)){
+        my_graph = graph_add_edge(my_graph,v1,v2,type);
+    }
+
+    print_graph(my_graph);
+    graph_bfs(my_graph,1);
+    my_graph = graph_free(my_graph);
+    return EXIT_SUCCESS;
+}
+
+

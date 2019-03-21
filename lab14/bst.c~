@@ -1,0 +1,5 @@
+struct bst_node { /* should live in bst.c */
+    char *key;
+    bst left;
+    bst right;
+};
