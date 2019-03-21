@@ -1,0 +1,46 @@
+Last login: Tue Jul 17 21:19:51 o
+Kimberlenes-Air:~ kimberlenesharma$ ksharma@hex.otago.ac.nz
+-bash: ksharma@hex.otago.ac.nz: command not found
+Kimberlenes-Air:~ kimberlenesharma$ ssh ksharma@hex.otago.ac.nz
+ksharma@hex.otago.ac.nz's password: 
+Last login: Wed Jul 11 21:05:13 2018 from 121.99.207.14
+ksharma@hex:~$ cd 242
+ksharma@hex:~/242$ ls
+fibonacci        first-program.c~  prime-number.c   print-sqrts.c
+fibonacci.c      hello             prime-number.c~  print-sqrts.c~
+fibonacci.c~     hello.c           print-nums       sum-of-squares
+first-program.c  prime-number      print-sqrts      sum-of-squares.c
+ksharma@hex:~/242$ mkdir lab02
+ksharma@hex:~/242$ cd lab02
+ksharma@hex:~/242/lab02$ emacs scores.c
+
+
+
+
+
+
+
+
+
+File Edit Options Buffers Tools Cosc C Help                                     
+#include <stdio.h>                                                              
+#include <stdlib.h>                                                             
+                                                                                
+int main(void){                                                                 
+    double s1, s2, s3;                                                          
+    int return_code;                                                            
+                                                                                
+    printf("Enter scores given by 3 judges: ");                                 
+    fflush(stdout);                                                             
+    return_code = scanf("%lg, %lg, %lg", s1, s2, s3);                           
+    if(return_code != 3) {                                                      
+        printf("scanf returned ccode %d\n", return_code);                       
+        return EXIT_FAILURE;                                                    
+    }                                                                           
+                                                                                
+    if(s1<s2 && s1<s3) {                                                        
+        printf("Contestant's final score: %lg\n", (s2+s3)/2);                   
+    }                                                                           
+    else if(s2<s1 && s2<s3) {                                                   
+        printf("Contestant's final score: %lg\n", (s1+s3)/2);                   
+    }                                                                                                                                   

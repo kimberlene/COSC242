@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+#define ARRAY_MAX 30000
+
+/*method that sorts the input array using selection sort*/
+void selection_sort(int *a, int n) {
+    int x=0, y=0; /*loop variables*/
+    int t;
+    int min=0;
+    for(x=0; x<n; x++) {
+        for(y=x+1; y<n; y++) {
+            if(a[y]<a[min]){
+                min = y;
+            }
+        }
+        t = a[x];
+        a[x] = a[min];
+        a[min] = t;
+    }
+}
+    
+
+int main(void) {
+    int my_array[ARRAY_MAX];
+    int count = 0;
+    clock_t start, end;
+    
+    while (count < ARRAY_MAX && 1 == scanf("%d", &my_array[count])) {
+        count++; /*count variable stores the length of the array*/
+    }
+    
+    start = clock(); /*calculates the start time of the program*/
+    selection_sort(my_array, count);
+    end = clock();/*calculates when the program finished execution*/
+ 
+    fprintf(stderr, "%d %f\n", count, (end-start) / (double)CLOCKS_PER_SEC);
+    return EXIT_SUCCESS;
+}
